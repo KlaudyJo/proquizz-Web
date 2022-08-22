@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+
+
+ body {
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+
+  /* mobile viewport bug fix */
+     min-height: -webkit-fill-available;
+     background-color: #2F303A;
+     font-family: Poppins, sans-serif;
+     font-size: 1rem;
+     color: white;
+ 
+  }
+
+  html {
+    height: -webkit-fill-available;
+    box-sizing: border-box;
+  }
+  *,
+  *:before,
+  *:after {
+   box-sizing: inherit;
+  }
+
+  
+
+.hidden {
+    display: none;
+  }
+
+.heart {
+  color: red;
+}
+
+
+.bg-dark {
+    background-color: #2F303A !important;
+}
+
+
+.container-fluid {
+    padding-left: 70px;
+}
+
+.navbar-brand {
+    padding-left: 20px;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.nav-link {
+    font-weight: 400;
+    font-size: 1.5rem;
+    padding-left: 20px;
+
+}
+
+
+.img-col img {
+    max-width: 400px;
+    max-height: 400px;
+    
+}
+
+.container {
+    height: 100%;
+
+}
+
+
+@media screen and (min-width:861px){
+    .container{
+        padding-bottom: 50px;
+    }
+
+    .img-col img {
+        max-width: 600px;
+        max-height: 600px;
+        
+    }
+    .text-col {
+        margin-left: 50px;
+    }
+}
+
+
+
+@media screen and (max-width:860px){
+    .img-col img {
+        max-width: 400px;
+        max-height: 400px;
+        margin-left: 20px;
+        
+    }
+    .text-col {
+        margin-left: 50px;
+        width: 100%;
+    }
+    .title {
+        font-weight: 500;
+        font-size: 2.5em;
+        margin-bottom: 1rem;
+        margin-top: 0;
+      }
+      
+      .subtitle {
+        font-weight: 500;
+        font-size: 1em;
+        margin-bottom: 2rem;
+      }
+      .get_api {
+        margin-top: 20px;
+        padding: 0 0;
+    }
+}
+@media screen and (max-width:540px){
+
+
+    .navbar-brand {
+        padding-left: 0px;
+
+    }
+
+.container {
+    flex-direction: column;
+    margin-top: 70px;
+    height: 100%;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+}
+
+.text-col{
+    margin-top: 20px;
+}
+.get_api {
+    margin-top: 20px;
+}
+
+.get_api textarea {
+    width: 90%;
+    margin: 0 20px;
+  }
+
+
+}
+
+
+.title {
+    font-weight: 500;
+    font-size: 3em;
+    margin-bottom: 1rem;
+    margin-top: 0;
+  }
+  
+  .subtitle {
+    font-weight: 500;
+    font-size: 1.2em;
+    margin-bottom: 2rem;
+  }
+
+
+
+.btn {
+    color: white;
+    background-color: #1762A7;
+    padding: .75rem 1.5rem;
+    border-radius: .5rem;
+    text-decoration: none;
+    font-size: .9rem;
+    outline: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #2180d8;
+  }
+  
+  .btn:focus {
+    background-color: #2796ff;
+  }
+
+ 
+
+
+  .highlighted {
+    color: #1762A7;
+    font-weight: 600;
+  }
+.form {
+   
+    padding: 2% 2%;
+
+  }
+
+.question_form {
+    background-color: #202027 !important;
+    height: auto;
+  }
+#apiKey {
+    font-size: 15px;
+    height: 30%;
+  }
+
+#myTextarea {
+    font-size: 12px;
+    height: 64%;
+    margin-top: 20px;
+  }
+textarea {
+    width: 100%;
+    padding-left: 10px;
+  }
+
+.get_categories{
+    margin-bottom: 30px;
+}
+
+#apiKeyCat {
+    height: 60px;
+  }
+
+#uniqueCat{
+    height: 150px;
+  }
+
+
+.get_metadata{
+    margin-bottom: 30px;
+}
+
+#apiKeyMet {
+    height: 60px;
+  }
+
+#uniqueMet{
+    height: 200px;
+  }
+
+.get_key {
+  display: None;
+}
+
+.fixed__home {
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+
+}
+
+h1 {
+  text-align: center;
+}
+
+/* Sets the width for the accordion. Sets the margin to 90px on the top and bottom and auto to the left and right */
+
+.accordion {
+  max-width: 800px;
+  height: 100%;
+  margin: 90px auto;
+  color: black;
+  background-color: white;
+  padding: 45px 45px;
+ box-shadow: 5px 5px #1762A7;
+}
+
+.accordion .contain {
+  position: relative;
+  margin: 10px 10px;
+}
+
+/* Positions the labels relative to the .container. Adds padding to the top and bottom and increases font size. Also makes its cursor a pointer */
+
+.accordion .label {
+  position: relative;
+  padding: 10px 0;
+  font-size: 20px;
+  color: #2F303A;
+  cursor: pointer;
+}
+/* Positions the plus sign 5px from the right. Centers it using the transform property. */
+
+.accordion .label::before {
+  content: '+';
+  color: #2F303A;
+  position: absolute;
+  top: 50%;
+  right: -5px;
+  font-size: 20px;
+  transform: translateY(-50%);
+}
+
+/* Hides the content (height: 0), decreases font size, justifies text and adds transition */
+
+.accordion .content {
+  position: relative;
+  background: white;
+  height: 0;
+  font-size: 15px;
+  text-align: justify;
+  width: 100%;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+/* Adds a horizontal line between the contents */
+
+.accordion hr {
+  width: 100;
+  margin-left: 0;
+  border: 1px solid grey;
+}
+
+/* Unhides the content part when active. Sets the height */
+
+.accordion .contain.active .content {
+  height: auto;
+}
+
+/* Changes from plus sign to negative sign once active */
+
+.accordion .contain.active .label::before {
+  content: '-';
+  font-size: 30px;
+}
+
+.go__home, 
+.go__home:link {
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  color: #202027;
+  position: relative;
+  left: 96%;
+-webkit-transform: translateX(-96%);
+-ms-transform: translateX(-96%);
+transform: translateX(96%);
+}
+
+
+
+.go__home:visited, .go__home:hover {
+  color: #202027;
+}
+
+
+.footer__link:link, .footer__link:visited, .footer__link:active {
+  color: white;
+  text-decoration: none;
+}
