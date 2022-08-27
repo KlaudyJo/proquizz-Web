@@ -1,4 +1,5 @@
 import requests
+import os
 
 
 class postQuestion():
@@ -7,17 +8,18 @@ class postQuestion():
             
 
         self.body = data[0]
-        self.username = 'klaudyjo'
-        self.password = 'qwert'
+        self.username = os.environ.get('USERNAME')
+        self.password = os.environ.get('PASSWORD')
         self.credentials = None
         # if os.path.exists('token.pickle'):
         #  with open('token.pickle', 'rb') as token:
         #     self.credentials = pickle.load(token)
         # self.headers = None
 
+
     def auth(self):
         url = "https://proquizz-api.herokuapp.com/auth"
-        resp = requests.post(url, json={'username':'klaudyjo', 'password': 'qwert'})
+        resp = requests.post(url, json={'username':self.username, 'password': self.password})
 
         return resp.json()['access_token']  
 
