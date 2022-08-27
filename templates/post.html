@@ -1,0 +1,121 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<main class="post" id="post_questions">
+    <div class="container vw-100" >
+      <div class=" text-center my-5">
+        <h1 class="title">Post Question</h1>
+      </div>
+  <div class="d-flex justify-content-center">
+  
+      <form style="width: 60%;" id="form_post" method="POST" >
+        <input name="csrfToken" value="{{csrf_token()}}" type="hidden"> 
+  
+        <div class="row mb-3">
+        <label for="question" class="col-sm-3 col-form-label col-form-label-sm">Question:</label>
+  
+        <div class="col-sm-9">
+          <input type="text" id="question" class="form-control" placeholder="Write a question" required>
+        </div>
+      </div>
+  
+  
+      <div class="row mb-3">
+        <label for="question" class="col-sm-3 col-form-label col-form-label-sm">Block of code:</label>
+  
+        <div class="col-sm-9">
+          <input class="form-check-input mx-3" type="checkbox" value="" id="checkCode">
+          <label class="form-check-label disabled" for="flexCheckDefault" >
+           not required
+          </label>
+          <textarea class="form-control hidden mt-2" name="code_block" id="code_block" cols="10" rows="3" >
+  
+  
+          </textarea>
+  
+        </div>
+  
+      </div>
+  
+      <div class="row mb-3">
+        <label for="question" class="col-sm-3 col-form-label col-form-label-sm">Correct answer:</label>
+        <div class="col-sm-9">
+          <div class="input-group">
+            <div class="input-group-text">&#10003</div>
+        <input type="text" id="cor_answ" class="form-control" placeholder="Write correct answer" required>
+      </div>
+        </div>
+      </div>
+  
+      <div class="row mb-3">
+        <label for="incor_answ" class="col-sm-3 col-form-label">Incorrect Answers:</label>
+  
+       
+        <div class="col-sm-9">
+          <div class="row mb-3">
+            <div class="input-group">
+            <div class="input-group-text">X</div>
+            <input type="text" id="incor_answ_1" class="form-control" placeholder="Write incorrect answer one" required>
+          </div>
+        </div>
+  
+        <div class="row mb-3">
+          <div class="input-group">
+          <div class="input-group-text">X</div>
+          <input type="text" id="incor_answ_2" class="form-control" placeholder="Write incorrect answer two" required>
+        </div>
+      </div>
+  
+      <div class="row mb-3" >
+        <div class="input-group">
+        <div class="input-group-text">X</div>
+        <input type="text" id="incor_answ_3" class="form-control" placeholder="Write incorrect answer three" required>
+      </div>
+    </div>
+      </div>
+    </div>
+  
+  
+    <div class="row mb-3">
+      <label for="category_select" class="col-sm-3 col-form-label col-form-label-sm">Category:</label>
+  
+        <div class="col-sm-9">
+        <!-- <select class="form-select" id="cat_select" required>
+          </select> -->
+          <input type="text" id="cat_input" class="form-control" placeholder="write category" required>
+  
+        </div>
+      </div>
+  
+      <div class="row mb-3">
+      <label for="subcategory_select" class="col-sm-3 col-form-label col-form-label-sm">Subcategory:</label>
+        <div class="col-sm-9">
+          <!-- <select class="form-select" id="subcat_select" required>
+  
+            </select> -->
+            <input type="text" id="subcat_input" class="form-control" placeholder="write subcategory" required>
+  
+          </div>
+        </div>
+  
+        <div class="row mb-3">
+        <label for="diff_select" class="col-sm-3 col-form-label col-form-label-sm">Difficulty:</label>
+            <div class="col-sm-9">
+  
+        <select class="form-select" size="3"  id="diff_select" required>
+            <option value="easy">Easy</option>
+            <option value="hard">Mid</option>
+            <option value="hard">Hard</option>
+          </select>
+        </div>
+      </div>
+  
+          <div class="mb-3">
+            <input type="submit" id="SubmitApi" class="btn my-2" value="Submit Questions">
+            </div>
+      </form>
+  </div>
+  </div>
+  </main>
+  
+{% endblock %}

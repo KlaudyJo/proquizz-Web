@@ -10,8 +10,7 @@ const getResponse = function(url='', errorMsg= 'Something went wrong') {
 
 const getData = async function(ids) {
     const [categoryId, subcategoryId] = [...ids]
-    const url = ['https://proquizz-api.herokuapp.com/questions/uniques', 'https://proquizz-api.herokuapp.com/questions/metadata']
-    const [urlUniq, urlMeta, ...rest] = [...url];
+    const [urlUniq, urlMeta] = ['https://proquizz-api.herokuapp.com/questions/uniques', 'https://proquizz-api.herokuapp.com/questions/metadata']
     try {
         const [uniques, metaData] = await Promise.all([
             getResponse(urlUniq), 
@@ -88,7 +87,6 @@ $('#numQuestRange').change(function() {
 
 // recieve data from forms POST 
 var $code_block = $('#code_block')
-
 const postForm = $('#form_post');
 
 function sendData() {

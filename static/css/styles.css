@@ -5,9 +5,6 @@
     padding: 0;
     margin: 0;
     min-height: 100vh;
-
-  /* mobile viewport bug fix */
-     min-height: -webkit-fill-available;
      background-color: #2F303A;
      font-family: Poppins, sans-serif;
      font-size: 1rem;
@@ -16,7 +13,7 @@
   }
 
   html {
-    height: -webkit-fill-available;
+    height: 100%;
     box-sizing: border-box;
   }
   *,
@@ -27,22 +24,12 @@
 
   
 
-.hidden {
-    display: none;
-  }
-
 .heart {
   color: red;
 }
 
-
 .bg-dark {
     background-color: #2F303A !important;
-}
-
-
-.container-fluid {
-    padding-left: 70px;
 }
 
 .navbar-brand {
@@ -50,7 +37,6 @@
     font-weight: 600;
     font-size: 2rem;
 }
-
 .nav-link {
     font-weight: 400;
     font-size: 1.5rem;
@@ -58,20 +44,21 @@
 
 }
 
-
 .img-col img {
     max-width: 400px;
     max-height: 400px;
     
 }
-
-.container {
-    height: 100%;
+.fixed__home {
+  display: block;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
 
 }
 
 
-@media screen and (min-width:861px){
+@media screen and (min-width:992px){
     .container{
         padding-bottom: 50px;
     }
@@ -84,17 +71,12 @@
     .text-col {
         margin-left: 50px;
     }
+  
+
 }
 
+@media screen and (max-width:992px){
 
-
-@media screen and (max-width:860px){
-    .img-col img {
-        max-width: 400px;
-        max-height: 400px;
-        margin-left: 20px;
-        
-    }
     .text-col {
         margin-left: 50px;
         width: 100%;
@@ -115,37 +97,48 @@
         margin-top: 20px;
         padding: 0 0;
     }
+
+
 }
-@media screen and (max-width:540px){
+@media screen and (max-width:768px){
+h1 {
+  text-align: left;
 
+};
+.title {
+  font-size: calc(1.5rem + 1.5vw);
+}
 
-    .navbar-brand {
-        padding-left: 0px;
+.navbar-brand {
+    padding-left: 0px;
 
-    }
+}
 
 .container {
     flex-direction: column;
     margin-top: 70px;
-    height: 100%;
     padding-bottom: 2rem;
     margin-bottom: 2rem;
+    
 }
 
 .text-col{
-    margin-top: 20px;
+    margin-top: 20px;  
 }
 .get_api {
     margin-top: 20px;
 }
-
 .get_api textarea {
     width: 90%;
     margin: 0 20px;
   }
 
+  .fixed__home {
 
-}
+    display: none;
+
+
+}}
 
 
 .title {
@@ -191,9 +184,7 @@
     font-weight: 600;
   }
 .form {
-   
     padding: 2% 2%;
-
   }
 
 .question_form {
@@ -244,23 +235,11 @@ textarea {
   display: None;
 }
 
-.fixed__home {
-  position: fixed;
-  bottom: 20px;
-  right: 10px;
-
-}
-
-h1 {
-  text-align: center;
-}
-
-/* Sets the width for the accordion. Sets the margin to 90px on the top and bottom and auto to the left and right */
 
 .accordion {
   max-width: 800px;
   height: 100%;
-  margin: 90px auto;
+  margin: 60px auto;
   color: black;
   background-color: white;
   padding: 45px 45px;
@@ -272,7 +251,6 @@ h1 {
   margin: 10px 10px;
 }
 
-/* Positions the labels relative to the .container. Adds padding to the top and bottom and increases font size. Also makes its cursor a pointer */
 
 .accordion .label {
   position: relative;
@@ -281,7 +259,6 @@ h1 {
   color: #2F303A;
   cursor: pointer;
 }
-/* Positions the plus sign 5px from the right. Centers it using the transform property. */
 
 .accordion .label::before {
   content: '+';
@@ -293,7 +270,6 @@ h1 {
   transform: translateY(-50%);
 }
 
-/* Hides the content (height: 0), decreases font size, justifies text and adds transition */
 
 .accordion .content {
   position: relative;
@@ -306,7 +282,6 @@ h1 {
   transition: 0.5s;
 }
 
-/* Adds a horizontal line between the contents */
 
 .accordion hr {
   width: 100;
@@ -314,13 +289,11 @@ h1 {
   border: 1px solid grey;
 }
 
-/* Unhides the content part when active. Sets the height */
 
 .accordion .contain.active .content {
   height: auto;
 }
 
-/* Changes from plus sign to negative sign once active */
 
 .accordion .contain.active .label::before {
   content: '-';
@@ -342,9 +315,6 @@ transform: translateX(96%);
 
 
 
-.go__home:visited, .go__home:hover {
-  color: #202027;
-}
 
 
 .footer__link:link, .footer__link:visited, .footer__link:active {

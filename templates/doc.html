@@ -1,0 +1,114 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+
+<main class="documentation" id="get_key">
+    <div class="container ">
+        <div class="get_questions">
+<div class="container__text">
+    <div class="text-center">
+    <h1 class="title">Documentation</h1>
+</div>
+    <h5 class="subtext">GET QUESTIONS</h5>
+    <p>
+    Send a GET request to <a class="highlighted"  href="https://proquizz-api.herokuapp.com/questions/all" target="_blank">proquizz-api.heroku/questions/all</a>  to recieve a random array of questions. If limit is not selected, than you will receive 20 random questions in your call.  
+<br>
+Link: <a class="highlighted"  href="https://proquizz-api.herokuapp.com/questions/all" target="_blank">proquizz-api.heroku/questions/all </a> <br>
+With Limit: <a class="highlighted" href="https://proquizz-api.herokuapp.com/questions/all?limit=2" target="_blank">proquizz-api.herokuapp.com/questions/all?limit=2 </a> <br>
+<br>
+If you want to select a specific categories or subcategories, then an avaible query parameters are shown below &#8595;.</p>
+</div>
+
+<!--end of container text-->
+<div class="row row-questions mb-5">
+    <div class="col-md-6 col-sx-12  question_form">
+        <form  class="form" id="form_question">
+            <label for="category_select" class="my-2 form-label">Category</label>
+            <select class="form-select" id="category_select">
+              </select>
+
+              <label for="subcategory_select" class="my-2 form-label">Subcategory</label>
+              <select class="form-select" id="subcategory_select">
+                </select>
+                <label for="numQuestRange" class="form-label my-2">Number of questions</label>
+                <input type="range" class=" form-range" min="0" max="20" value="0" step="1" id="numQuestRange">
+                <div class="text-end">
+                <label for="numQuestRange"  class="form-label" id="numQuestion"></label>
+            </div>
+
+            <select class="form-select" size="3"  id="difficulty_select">
+                <option value="easy">Easy</option>
+                <option value="hard">Mid</option>
+                <option value="hard">Hard</option>
+              </select>
+              <div class="my-3">
+                <input type="submit" id="GetApi" class="btn" value="Get API">
+                </div>
+          </form>
+
+
+
+        </form>
+    </div>
+
+    <div class="col-md-6 col-sx-12 get_api">
+        <textarea name="" id="apiKey" disabled>Your Api key: 
+https://proquizz-api.herokuapp.com/questions/all
+      </textarea>
+        <textarea name="" id="myTextarea" disabled> ----- Select params  ---- </textarea>
+
+    </div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+<div class="get_categories">
+<div class="container__text">
+    <h5 class="subtext">GET categories</h5>
+    <p>Send a GET request to pl-quizz.heroku/questions/categories to recieve an information on the categories of question avaible to request.  The keys of the returned object are the names for each category. Values of the keys - subcategories, are sent in  array when requesting.  </p>
+</div>
+<!--end of container text-->
+<div class="col get_api">
+        <textarea name="" id="apiKeyCat"  disabled>Your API key:</textarea>
+        <textarea name="" id="uniqueCat"  disabled> ----- Select params  ---- </textarea>
+
+    </div>
+</div>
+
+<div class="get_metadata">
+<div class="container__text">
+    <h5 class="subtext">GET metadata</h5>
+    <p>Send a GET request to pl-quizz.heroku/questions/metadata to recieve an information on the number of questions in the database and the distribution of questions across categories and subcategories.</p>
+</div>
+
+<!--end of container text-->
+<div class="row">
+<div class="col get_api">
+        <textarea name="" id="apiKeyMet" disabled>Your API key:</textarea>
+        <textarea name="" id="uniqueMet" disabled> ----- Select params  ---- </textarea>
+
+    </div>
+
+</div>
+</div>
+
+
+</div>
+
+
+
+
+
+</main>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,69 @@
+
+{% extends 'index.html' %}
+
+{% block content %}
+
+
+<main class="faq" id="faq_questions">
+
+    <div class=" accordion-body mb-5" >
+      <div class="accordion">
+        <h1>Frequently Asked Questions</h1>
+        <hr>
+        <div class="contain">
+          <div class="label">How do I request questions from API?</div>
+          <div class="content">It's easy! Just send a HTTP GET request to <a href="https://proquizz-api.herokuapp.com/questions/all" target="_blank">https://proquizz-api.herokuapp.com/questions/all</a> the response will be a JSON array of questions. You don't need an API key.</div>
+        </div>
+        <hr>
+        <div class="contain">
+          <div class="label">Can I use your API in my app? </div>
+          <div class="content">The API and all data returned from it are licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.
+            This means that the API and the questions it returns are free for noncommercial use. 
+          </div>
+        </div>
+        <hr>
+        <div class="contain">
+          <div class="label">How can I contribute to the project</div>
+          <div class="content">
+            First of all, you can submit question <a href="{{ url_for('postpage')}}">here</a>.
+          Or if you would like to help with the code and maintaining db, please hget in touch with <a class="" href="mailto:mail@klaudyjo.cz">mail@klaudyjo.cz.</a></div>
+        </div>
+        <hr>
+        <div class="contain">
+          <div class="label">Do I need an api key?</div>
+          <div class="content"> You don't need an API key to request questions. You only need an API key if you want to:
+            <ul><li>
+              Bypass the rate limit
+            </li>
+          <li>Search questions
+
+          </li>
+        <li>
+          Download all questions
+        </li></ul>
+            If you would like an API key for any of these reasons, please contact <a class="" href="mailto:mail@klaudyjo.cz">mail@klaudyjo.cz.</a></div>
+        </div>
+        <hr>
+        <div class="contain">
+          <div class="label">Is there a request limit? </div>
+          <div class="content">
+            For performance reasons we currently limit the amount of questions you can request at one time to 20.
+            We limit the number of requests you can send from a single IP to 20 requests in a 5 second window. If you pass this limit then you will receive HTTP 429 errors. This is to keep the API available to all.
+         
+          </div>
+        </div>
+        <hr>
+
+
+        <a class="go__home" onclick="window.location.href='{{ url_for('homepage')}}'">
+          <svg style="color: #202027;" xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" fill="#202027"></path> <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" fill="#202027"></path> </svg>
+        </a>
+       
+      </div>
+      </div>
+
+  </div>
+
+</main>
+
+{% endblock %}
