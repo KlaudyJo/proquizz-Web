@@ -8,14 +8,26 @@ const getResponse = function(url='', errorMsg= 'Something went wrong') {
 
 
 
-const getData = async function(ids) {
-    const [categoryId, subcategoryId] = [...ids]
+
+const getData = async function() {
+    const [categoryId, subcategoryId] = ['#category_select', '#subcategory_select']
     const [urlUniq, urlMeta] = ['https://proquizz-api.herokuapp.com/questions/uniques', 'https://proquizz-api.herokuapp.com/questions/metadata']
+    const category_select = $(categoryId);
+    const subcategorySelect = $(subcategoryId);
+    const appendCat =  function(arr) {
+        for (const val of arr) {
+            subcategorySelect
+                .append($('<option>').val(val).text(val))
+            }
+    
+    
+    }
     try {
         const [uniques, metaData] = await Promise.all([
             getResponse(urlUniq), 
             getResponse(urlMeta)
         ])
+
 
         if (categoryId  === '#category_select'){
         var $edit = $('#apiKeyCat');
@@ -33,26 +45,28 @@ const getData = async function(ids) {
 
 
         $.each(uniques, function(key, value) {
-            const category_select = $(categoryId);
-            const subcategorySelect = $(subcategoryId);
-            category_select.append($('<option>').val(key).text(key))
-            category_select.change(function(){{
-                    const selectedCategory = category_select.find(':selected').text();
-                    if (selectedCategory === key) {
-                        subcategorySelect.empty()
-                        for (const val of value) {
-                        subcategorySelect
-                            .append($('<option>').val(val).text(val))
-                        }}
-                    }})
-                })
+            category_select.append($('<option>').val(key).text(key))})
+            appendCat(uniques[category_select.find(':selected').text()])
+            
+
+        category_select.change(function(){{
+            const selectedCategory = category_select.find(':selected').text();
+                 $.each(uniques, function(key, value) {
+                 if (selectedCategory === key)  {
+                    subcategorySelect.empty()
+                    appendCat(value);
+                       }
+                    });
+                    }
+    })
+    
     } catch (err) {
         console.log(err)
     }
  };
 
 
- [['#category_select', '#subcategory_select']].forEach(id => getData(id));
+ getData()
 
 
 
