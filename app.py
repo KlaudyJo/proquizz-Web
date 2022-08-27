@@ -1,5 +1,4 @@
 
-from tkinter.messagebox import YESNOCANCEL
 from flask import Flask, render_template, request, jsonify
 from flask_wtf.csrf import CSRFProtect
 from main import postQuestion
