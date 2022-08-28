@@ -185,6 +185,9 @@ h1 {
 .form {
     padding: 2% 2%;
   }
+textarea{
+ white-space: pre !important; 
+}
 
 .question_form {
     background-color: #202027 !important;
