@@ -4,11 +4,11 @@
  body {
     padding: 0;
     margin: 0;
-    min-height: 100vh;
-     background-color: #2F303A;
-     font-family: Poppins, sans-serif;
-     font-size: 1rem;
-     color: white;
+    height: 100vh;
+    background-color: #2F303A;
+    font-family: Poppins, sans-serif;
+    font-size: 1rem;
+    color: white;
  
   }
 
@@ -79,7 +79,6 @@
 
     .text-col {
         margin-left: 50px;
-        width: 100%;
     }
     .title {
         font-weight: 500;
@@ -129,7 +128,7 @@ h1 {
     margin-top: 20px;
 }
 .get_api textarea {
-    width: 90%;
+
     margin: 0 20px;
   }
 
@@ -201,10 +200,11 @@ h1 {
     height: 64%;
     margin-top: 20px;
   }
-textarea {
-    width: 100%;
-    padding-left: 10px;
+.textarea_api, .textarea_json {
+    min-width: 90%;
+    min-height: 70px;
   }
+
 
 .get_categories{
     margin-bottom: 30px;
