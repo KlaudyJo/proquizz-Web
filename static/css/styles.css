@@ -69,8 +69,7 @@
         
     }
     .text-col {
-        margin-left: 50px;
-    }
+        margin-left: 50px;}
   
 
 }
@@ -317,6 +316,9 @@ transform: translateX(96%);
 }
 
 
+footer{
+  height:auto;
+}
 
 
 
